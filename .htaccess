@@ -3,5 +3,23 @@
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.
 # Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /DevSohaib/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /DevSohaib/index.php [L]
+</IfModule>
 
 # END WordPress
+# BEGIN Simply Static
+# The directives (lines) between "BEGIN Simply Static" and "END Simply Static" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<Files "C:\xampp\htdocs\DevSohaib/wp-content/uploads\simply-static\d0fad193d185200240675edb0576e656-debug.txt">
+require all denied
+require host localhost
+</Files>
+# END Simply Static
